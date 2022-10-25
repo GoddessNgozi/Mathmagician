@@ -6,38 +6,38 @@ import './calculator.css';
 class Calculator extends React.Component {
   render() {
     return (
-      <ul className="container">
-        <li className="screen">0</li>
-        <li className="row">
-          <div className="button">Ac</div>
-          <div className="button">+/-</div>
-          <div className="button">%</div>
-          <div className="button col-4">&#xf7;</div>
-        </li>
-        <li className="row">
-          <div className="button">7</div>
-          <div className="button">8</div>
-          <div className="button">9</div>
-          <div className="button col-4">x</div>
-        </li>
-        <li className="row">
-          <div className="button">4</div>
-          <div className="button">5</div>
-          <div className="button">6</div>
-          <div className="button col-4">-</div>
-        </li>
-        <li className="row">
-          <div className="button">1</div>
-          <div className="button">2</div>
-          <div className="button">3</div>
-          <div className="button col-4">+</div>
-        </li>
-        <li className="row">
-          <div className="button span-2">0</div>
-          <div className="button">.</div>
-          <div className="button col-4">=</div>
-        </li>
-      </ul>
+      <table className="container">
+        <tr className="screen">0</tr>
+        <tr className="row">
+          <td className="button">AC</td>
+          <td className="button">+/-</td>
+          <td className="button">%</td>
+          <td className="button col-4">&#xf7;</td>
+        </tr>
+        <tr className="row">
+          <td className="button">7</td>
+          <td className="button">8</td>
+          <td className="button">9</td>
+          <td className="button col-4">x</td>
+        </tr>
+        <tr className="row">
+          <td className="button">4</td>
+          <td className="button">5</td>
+          <td className="button">6</td>
+          <td className="button col-4">-</td>
+        </tr>
+        <tr className="row">
+          <td className="button">1</td>
+          <td className="button">2</td>
+          <td className="button">3</td>
+          <td className="button col-4">+</td>
+        </tr>
+        <tr className="row">
+          <td className="button span-2">0</td>
+          <td className="button">.</td>
+          <td className="button col-4">=</td>
+        </tr>
+      </table>
     );
   }
 }
