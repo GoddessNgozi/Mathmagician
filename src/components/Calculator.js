@@ -1,9 +1,9 @@
 /* eslint-disable */
 
-import React, { Component } from 'react';
+import React from 'react';
 import './calculator.css';
 
-export class Calculator extends Component {
+class Calculator extends React.Component {
   render() {
     return (
       <ul className="container">
