@@ -42,7 +42,7 @@ class Calculator extends React.Component {
             <td onClick={this.mathMagic}>4</td>
             <td onClick={this.mathMagic}>5</td>
             <td onClick={this.mathMagic}>6</td>
-            <td className="col-4">-</td>
+            <td className="col-4" onClick={this.mathMagic}>-</td>
           </tr>
           <tr>
             <td onClick={this.mathMagic}>1</td>
