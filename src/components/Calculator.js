@@ -1,25 +1,20 @@
 /* eslint-disable */
 
-import React from 'react';
+import React, { useState } from 'react';
 import calculate from '../logic/calculate';
 
-class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: null,
-      next: null,
-      operation: null,
-    };
-    this.mathMagic = this.mathMagic.bind(this);
-  }
+const Calculator = () => {
+  const [total, setTotal] = useState(null);
+  const [next, setNext] = useState(null);
+  const [operation, setOperation] = useState(null);
 
-  mathMagic(e) {
-    this.setState(calculate(this.state, e.target.textContent));
-  }
+  const mathMagic = (e) => {
+    const logic = calculate({total, next, operation}, e.target.textContent);
+    setTotal(logic.total);
+    setNext(logic.next);
+    setOperation(logic.operation);
+  };
 
-  render() {
-    const { total, next, operation } = this.state;
     return (
       <table>
         <tbody>
@@ -27,38 +22,37 @@ class Calculator extends React.Component {
             <td className="screen" colspan="4">{total}{operation}{next}</td>
           </tr>
           <tr>
-            <td onClick={this.mathMagic}>AC</td>
-            <td onClick={this.mathMagic}>+/-</td>
-            <td onClick={this.mathMagic}>%</td>
-            <td className="col-4" onClick={this.mathMagic}>&#xf7;</td>
+            <td onClick={mathMagic}>AC</td>
+            <td onClick={mathMagic}>+/-</td>
+            <td onClick={mathMagic}>%</td>
+            <td className="col-4" onClick={mathMagic}>&#xf7;</td>
           </tr>
           <tr>
-            <td onClick={this.mathMagic}>7</td>
-            <td onClick={this.mathMagic}>8</td>
-            <td onClick={this.mathMagic}>9</td>
-            <td className="col-4" onClick={this.mathMagic}>x</td>
+            <td onClick={mathMagic}>7</td>
+            <td onClick={mathMagic}>8</td>
+            <td onClick={mathMagic}>9</td>
+            <td className="col-4" onClick={mathMagic}>x</td>
           </tr>
           <tr>
-            <td onClick={this.mathMagic}>4</td>
-            <td onClick={this.mathMagic}>5</td>
-            <td onClick={this.mathMagic}>6</td>
-            <td className="col-4" onClick={this.mathMagic}>-</td>
+            <td onClick={mathMagic}>4</td>
+            <td onClick={mathMagic}>5</td>
+            <td onClick={mathMagic}>6</td>
+            <td className="col-4" onClick={mathMagic}>-</td>
           </tr>
           <tr>
-            <td onClick={this.mathMagic}>1</td>
-            <td onClick={this.mathMagic}>2</td>
-            <td onClick={this.mathMagic}>3</td>
-            <td className="col-4" onClick={this.mathMagic}>+</td>
+            <td onClick={mathMagic}>1</td>
+            <td onClick={mathMagic}>2</td>
+            <td onClick={mathMagic}>3</td>
+            <td className="col-4" onClick={mathMagic}>+</td>
           </tr>
           <tr>
-            <td colspan="2" onClick={this.mathMagic}>0</td>
-            <td onClick={this.mathMagic}>.</td>
-            <td className="col-4" onClick={this.mathMagic}>=</td>
+            <td colspan="2" onClick={mathMagic}>0</td>
+            <td onClick={mathMagic}>.</td>
+            <td className="col-4" onClick={mathMagic}>=</td>
           </tr>
         </tbody>
       </table>
     );
   }
-}
 
 export default Calculator;
