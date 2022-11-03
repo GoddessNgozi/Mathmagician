@@ -27,7 +27,7 @@ Read a random math-related quote.
 
 ### LIVE DEMO
 
-N/A
+[Link](https://maatmagician.netlify.app/)
 
 ## Author
 
